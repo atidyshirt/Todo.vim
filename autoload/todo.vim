@@ -3,7 +3,7 @@ let g:loaded_todo = 1
 let s:buf_name        = '__todo__'
 let s:help_view       = 0
 
-function! todo:ToggleList() abort
+function! s:BuildTodo() abort
   let entries = []
   for cmd in ['git grep -niIw -e TODO: -e FIXME: 2> /dev/null',
             \ 'grep -rniIw -e TODO: -e FIXME: . 2> /dev/null']
@@ -19,6 +19,10 @@ function! todo:ToggleList() abort
     call setqflist(entries)
     copen
   endif
+endfunction
+
+function! todo#ToggleList() abort
+  call s:BuildTodo()
 endfunction
 
 autocmd FileType qf nnoremap <buffer> <CR> <CR>:cclose<CR>
