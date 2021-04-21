@@ -3,7 +3,7 @@ let g:loaded_todo = 1
 let s:buf_name        = '__todo__'
 let s:help_view       = 0
 
-function! s:CreateTodoList() abort
+function! todo:ToggleList() abort
   let entries = []
   for cmd in ['git grep -niIw -e TODO: -e FIXME: 2> /dev/null',
             \ 'grep -rniIw -e TODO: -e FIXME: . 2> /dev/null']

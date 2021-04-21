@@ -4,4 +4,4 @@ if &cp || exists('g:loaded_todo')
     finish
 endif
 
-command! Todo call todo#CreateTodoList()
+command! Todo call todo#ToggleList()
