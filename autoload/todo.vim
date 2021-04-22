@@ -5,8 +5,8 @@ let s:help_view       = 0
 
 function! s:BuildTodo() abort
   let entries = []
-  for cmd in ['git grep -niIw -e TODO: -e FIXME: 2> /dev/null',
-            \ 'grep -rniIw -e TODO: -e FIXME: . 2> /dev/null']
+  for cmd in ['git grep -niIw -e TODO: -e FIXME: -e NOTE: 2> /dev/null',
+            \ 'grep -rniIw -e TODO: -e FIXME: -e NOTE: . 2> /dev/null']
     let lines = split(system(cmd), '\n')
     if v:shell_error != 0 | continue | endif
     for line in lines
