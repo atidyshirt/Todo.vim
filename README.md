@@ -15,8 +15,11 @@ To use this plug-in you will first need to install it with your plug-in manager 
 
 For Plug or Dein
 
-```vim
+```
 Plug 'atidyshirt/Todo.vim'
+```
+
+```vim
 call dein#add('atidyshirt/Todo.vim')
 ```
 
@@ -26,4 +29,15 @@ To map it to a key put something like this in your `~/.vimrc` or `~/.config/nvim
 
 ```vim
 nmap <leader>T :Todo<CR> 
+```
+
+### Recommendations
+
+This plug-in is best paired with [bqf](https://github.com/kevinhwang91/nvim-bqf) by kevinhwang91.
+This will allow you to get previews as seen in the showcase above, to do this add the following
+to your `~/.vimrc` or `~/.config/init.vim`.
+
+```
+Plug 'atidyshirt/Todo.vim'
+Plug 'kevinhwang91/nvim-bqf'
 ```
